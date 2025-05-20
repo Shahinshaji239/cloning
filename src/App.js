@@ -24,7 +24,10 @@ const ProfilePage = () => {
       { icon: "📚", bg: "#f5f5f7" }
     ]
   };
-
+ const handleViewAll = () => {
+  // Your logic here
+  console.log("View all clicked");
+};
   const SidebarItem = ({ icon, text, active }) => {
     const iconMap = {
       grid: "bi bi-grid",
@@ -33,6 +36,8 @@ const ProfilePage = () => {
       users: "bi bi-people",
       user: "bi bi-person"
     };
+    
+
     return (
       <div className={`sidebar-item ${active ? 'active' : ''}`}>
         <div className="sidebar-icon"><i className={iconMap[icon]}></i></div>
@@ -145,7 +150,9 @@ const ProfilePage = () => {
                 <div className="active-courses-section">
                   <div className="card-header-custom">
                     <h3 className="section-title">Active Courses</h3>
-                    <a href="#" className="view-all-link">View all</a>
+<button className="view-all-link" onClick={handleViewAll}>
+  View all
+</button>
                   </div>
                   <div className="active-courses card">
                     <div className="course-cards">
